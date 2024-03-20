@@ -119,14 +119,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : GraficosWidget(),
         ),
         FFRoute(
-          name: 'Relatorios',
-          path: '/relatorios',
-          requireAuth: true,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Relatorios')
-              : RelatoriosWidget(),
-        ),
-        FFRoute(
           name: 'Historico',
           path: '/historico',
           requireAuth: true,
@@ -333,13 +325,10 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/logo.png',
-                      width: double.infinity,
-                      fit: BoxFit.none,
-                    ),
+                  color: Color(0xA600103B),
+                  child: Image.asset(
+                    'assets/images/Fundo_App.png',
+                    fit: BoxFit.none,
                   ),
                 )
               : page;

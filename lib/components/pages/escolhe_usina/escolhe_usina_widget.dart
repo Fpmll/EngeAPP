@@ -49,9 +49,21 @@ class _EscolheUsinaWidgetState extends State<EscolheUsinaWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFF181A20),
       body: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
         child: Stack(
           children: [
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: Image.asset(
+                    'assets/images/Fundo_App_logo_centro.png',
+                  ).image,
+                ),
+              ),
+            ),
             Align(
               alignment: AlignmentDirectional(0.0, 0.0),
               child: Column(
@@ -111,8 +123,16 @@ class _EscolheUsinaWidgetState extends State<EscolheUsinaWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color: Colors.white,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                             ),
                                             AuthUserStreamWidget(
@@ -123,8 +143,16 @@ class _EscolheUsinaWidgetState extends State<EscolheUsinaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Lexend Deca',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           color: Colors.white,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                             ),
@@ -178,6 +206,8 @@ class _EscolheUsinaWidgetState extends State<EscolheUsinaWidget> {
                               .override(
                                 fontFamily: 'Work Sans',
                                 color: FlutterFlowTheme.of(context).tertiary,
+                                useGoogleFonts: GoogleFonts.asMap()
+                                    .containsKey('Work Sans'),
                               ),
                         ),
                       ),
@@ -272,27 +302,41 @@ class _EscolheUsinaWidgetState extends State<EscolheUsinaWidget> {
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: Colors
                                                                     .white,
                                                                 fontSize: 20.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                         ),
                                                       ),
                                                       Text(
                                                         listViewEngUsinasRecord
                                                             .localizacao,
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Lexend Deca',
-                                                              color: Color(
-                                                                  0x6BFFFFFF),
-                                                              fontSize: 15.0,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: Color(
+                                                                      0x6BFFFFFF),
+                                                                  fontSize:
+                                                                      15.0,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
                                                       ),
                                                     ],
                                                   ),
@@ -338,8 +382,16 @@ class _EscolheUsinaWidgetState extends State<EscolheUsinaWidget> {
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Lexend Deca',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily,
                                                           color: Colors.white,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
                                                 borderSide: BorderSide(

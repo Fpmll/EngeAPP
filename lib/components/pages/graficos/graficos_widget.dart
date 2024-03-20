@@ -45,7 +45,7 @@ class _GraficosWidgetState extends State<GraficosWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFF181A20),
       body: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
         child: Stack(
           children: [
             Align(
@@ -107,8 +107,16 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color: Colors.white,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                             ),
                                             AuthUserStreamWidget(
@@ -119,8 +127,16 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Lexend Deca',
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
                                                           color: Colors.white,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
                                                         ),
                                               ),
                                             ),
@@ -157,12 +173,6 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                         ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1.0,
-                    indent: 15.0,
-                    endIndent: 15.0,
-                    color: FlutterFlowTheme.of(context).accent4,
                   ),
                   Container(
                     width: 250.0,
@@ -254,11 +264,13 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                       .headlineLarge
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Poppins',
+                                                                            FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                         fontSize:
                                                                             32.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                       ),
                                                               pickerBackgroundColor:
                                                                   FlutterFlowTheme.of(
@@ -304,14 +316,22 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                     Text(
                                                       dateTimeFormat('d/M/y',
                                                           _model.datePicked1),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color: Colors.white,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: Colors
+                                                                    .white,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -322,9 +342,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFFF1CA92),
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                                 Row(
@@ -340,12 +368,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                     Text(
@@ -355,12 +389,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ].divide(
@@ -390,8 +430,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Lexend Deca',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color: Colors.white,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -479,11 +528,13 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                       .headlineLarge
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Poppins',
+                                                                            FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                         fontSize:
                                                                             32.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                       ),
                                                               pickerBackgroundColor:
                                                                   FlutterFlowTheme.of(
@@ -529,14 +580,22 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                     Text(
                                                       dateTimeFormat('d/M/y',
                                                           _model.datePicked2),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color: Colors.white,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: Colors
+                                                                    .white,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -547,9 +606,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFFF1CA92),
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                                 Row(
@@ -565,12 +632,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                     Text(
@@ -580,12 +653,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ].divide(
@@ -615,8 +694,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Lexend Deca',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color: Colors.white,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -704,11 +792,13 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                       .headlineLarge
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Poppins',
+                                                                            FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                         fontSize:
                                                                             32.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                       ),
                                                               pickerBackgroundColor:
                                                                   FlutterFlowTheme.of(
@@ -754,14 +844,22 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                     Text(
                                                       dateTimeFormat('d/M/y',
                                                           _model.datePicked3),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color: Colors.white,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: Colors
+                                                                    .white,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -772,9 +870,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFFF1CA92),
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                                 Row(
@@ -790,12 +896,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                     Text(
@@ -805,12 +917,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ].divide(
@@ -840,8 +958,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Lexend Deca',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color: Colors.white,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -929,11 +1056,13 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                       .headlineLarge
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Poppins',
+                                                                            FlutterFlowTheme.of(context).headlineLargeFamily,
                                                                         fontSize:
                                                                             32.0,
                                                                         fontWeight:
                                                                             FontWeight.w600,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).headlineLargeFamily),
                                                                       ),
                                                               pickerBackgroundColor:
                                                                   FlutterFlowTheme.of(
@@ -979,14 +1108,22 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                     Text(
                                                       dateTimeFormat('d/M/y',
                                                           _model.datePicked4),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Lexend Deca',
-                                                            color: Colors.white,
-                                                          ),
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
+                                                                color: Colors
+                                                                    .white,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
                                                     ),
                                                   ],
                                                 ),
@@ -997,9 +1134,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
-                                                            'Lexend Deca',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
                                                         color:
                                                             Color(0xFFF1CA92),
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
                                                       ),
                                                 ),
                                                 Row(
@@ -1015,12 +1160,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                     Text(
@@ -1030,12 +1181,18 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
                                                                 fontSize: 25.0,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
                                                               ),
                                                     ),
                                                   ].divide(
@@ -1065,8 +1222,17 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
                                                     .override(
-                                                      fontFamily: 'Lexend Deca',
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmallFamily,
                                                       color: Colors.white,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmallFamily),
                                                     ),
                                             elevation: 3.0,
                                             borderSide: BorderSide(
@@ -1109,10 +1275,8 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                                     radius: 15.0,
                                     dotWidth: 15.0,
                                     dotHeight: 8.0,
-                                    dotColor:
-                                        FlutterFlowTheme.of(context).accent1,
-                                    activeDotColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    dotColor: Color(0x33000000),
+                                    activeDotColor: Color(0xD9FFFFFF),
                                     paintStyle: PaintingStyle.fill,
                                   ),
                                 ),
@@ -1127,7 +1291,7 @@ class _GraficosWidgetState extends State<GraficosWidget> {
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xFF333340),
+                        color: Color(0xFF363636),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(0.0),

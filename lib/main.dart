@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(milliseconds: 1000),
+      Duration(milliseconds: 20),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -129,7 +129,6 @@ class _NavBarPageState extends State<NavBarPage> {
       'EscolheUsina': EscolheUsinaWidget(),
       'HomePage': HomePageWidget(),
       'Graficos': GraficosWidget(),
-      'Relatorios': RelatoriosWidget(),
       'Historico': HistoricoWidget(),
       'Perfil': PerfilWidget(),
     };
@@ -147,7 +146,7 @@ class _NavBarPageState extends State<NavBarPage> {
         selectedItemColor: Colors.white,
         unselectedItemColor: Color(0x98939393),
         showSelectedLabels: true,
-        showUnselectedLabels: true,
+        showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -188,18 +187,6 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.book_outlined,
-              size: 20.0,
-            ),
-            activeIcon: Icon(
-              Icons.book_outlined,
-              size: 25.0,
-            ),
-            label: 'Relatórios',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.history_sharp,
               size: 20.0,
             ),
@@ -219,7 +206,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.person,
               size: 25.0,
             ),
-            label: 'Perfil',
+            label: 'Config',
             tooltip: '',
           )
         ],

@@ -24,12 +24,6 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  double _varEnergia = 0.0;
-  double get varEnergia => _varEnergia;
-  set varEnergia(double _value) {
-    _varEnergia = _value;
-  }
-
   String _varUsinaNome = '';
   String get varUsinaNome => _varUsinaNome;
   set varUsinaNome(String _value) {

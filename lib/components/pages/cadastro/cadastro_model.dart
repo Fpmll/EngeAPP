@@ -13,6 +13,7 @@ import 'package:provider/provider.dart';
 class CadastroModel extends FlutterFlowModel<CadastroWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for Nome widget.
   FocusNode? nomeFocusNode;
   TextEditingController? nomeController;
@@ -47,6 +48,7 @@ class CadastroModel extends FlutterFlowModel<CadastroWidget> {
 
   @override
   void dispose() {
+    unfocusNode.dispose();
     nomeFocusNode?.dispose();
     nomeController?.dispose();
 

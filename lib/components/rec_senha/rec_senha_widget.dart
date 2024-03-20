@@ -7,31 +7,28 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'login_model.dart';
-export 'login_model.dart';
+import 'rec_senha_model.dart';
+export 'rec_senha_model.dart';
 
-class LoginWidget extends StatefulWidget {
-  const LoginWidget({super.key});
+class RecSenhaWidget extends StatefulWidget {
+  const RecSenhaWidget({super.key});
 
   @override
-  State<LoginWidget> createState() => _LoginWidgetState();
+  State<RecSenhaWidget> createState() => _RecSenhaWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
-  late LoginModel _model;
+class _RecSenhaWidgetState extends State<RecSenhaWidget> {
+  late RecSenhaModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginModel());
+    _model = createModel(context, () => RecSenhaModel());
 
     _model.emailController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
-
-    _model.senhaController ??= TextEditingController();
-    _model.senhaFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -66,7 +63,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 309.0,
+                          width: double.infinity,
                           height: 240.0,
                           decoration: BoxDecoration(),
                           child: Align(
@@ -75,7 +72,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                               child: SvgPicture.asset(
                                 'assets/images/LOGO.svg',
-                                width: double.infinity,
+                                width: 300.0,
                                 height: 300.0,
                                 fit: BoxFit.none,
                               ),
@@ -89,7 +86,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           child: Align(
                             alignment: AlignmentDirectional(0.03, -0.14),
                             child: Text(
-                              'Seja Bem Vindo',
+                              'Recuperar Senha',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -147,6 +144,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     _model.emailController,
                                                 focusNode:
                                                     _model.emailFocusNode,
+                                                textCapitalization:
+                                                    TextCapitalization.none,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelStyle: FlutterFlowTheme
@@ -154,7 +153,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Poppins',
-                                                        color: Colors.black,
+                                                        color:
+                                                            Color(0x84000000),
                                                         fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -240,7 +240,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Poppins',
-                                                      color: Colors.black,
+                                                      color: Color(0x84000000),
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.w500,
@@ -258,175 +258,27 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 20.0),
-                                          child: Container(
-                                            width: double.infinity,
-                                            height: 50.0,
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(25.0),
-                                            ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 20.0, 0.0),
-                                              child: TextFormField(
-                                                controller:
-                                                    _model.senhaController,
-                                                focusNode:
-                                                    _model.senhaFocusNode,
-                                                obscureText:
-                                                    !_model.senhaVisibility,
-                                                decoration: InputDecoration(
-                                                  labelStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 15.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        useGoogleFonts:
-                                                            GoogleFonts.asMap()
-                                                                .containsKey(
-                                                                    'Poppins'),
-                                                      ),
-                                                  hintText: 'Insira uma senha',
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color: Colors.black,
-                                                        fontSize: 14.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        useGoogleFonts:
-                                                            GoogleFonts.asMap()
-                                                                .containsKey(
-                                                                    'Poppins'),
-                                                      ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        const BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(4.0),
-                                                      topRight:
-                                                          Radius.circular(4.0),
-                                                    ),
-                                                  ),
-                                                  suffixIcon: InkWell(
-                                                    onTap: () => setState(
-                                                      () => _model
-                                                              .senhaVisibility =
-                                                          !_model
-                                                              .senhaVisibility,
-                                                    ),
-                                                    focusNode: FocusNode(
-                                                        skipTraversal: true),
-                                                    child: Icon(
-                                                      _model.senhaVisibility
-                                                          ? Icons
-                                                              .visibility_outlined
-                                                          : Icons
-                                                              .visibility_off_outlined,
-                                                      color: Color(0x6BA9A9A9),
-                                                      size: 24.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Poppins',
-                                                      color: Colors.black,
-                                                      fontSize: 14.0,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      useGoogleFonts:
-                                                          GoogleFonts.asMap()
-                                                              .containsKey(
-                                                                  'Poppins'),
-                                                    ),
-                                                validator: _model
-                                                    .senhaControllerValidator
-                                                    .asValidator(context),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
                                         FFButtonWidget(
                                           onPressed: () async {
-                                            GoRouter.of(context)
-                                                .prepareAuthEvent();
-
-                                            final user = await authManager
-                                                .signInWithEmail(
-                                              context,
-                                              _model.emailController.text,
-                                              _model.senhaController.text,
-                                            );
-                                            if (user == null) {
+                                            if (_model
+                                                .emailController.text.isEmpty) {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Email required!',
+                                                  ),
+                                                ),
+                                              );
                                               return;
                                             }
-
-                                            context.goNamedAuth('EscolheUsina',
-                                                context.mounted);
+                                            await authManager.resetPassword(
+                                              email:
+                                                  _model.emailController.text,
+                                              context: context,
+                                            );
                                           },
-                                          text: 'Entrar',
+                                          text: 'Recuperar Senha',
                                           icon: FaIcon(
                                             FontAwesomeIcons.signInAlt,
                                           ),
@@ -444,7 +296,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Work Sans',
+                                                  fontFamily: 'Poppins',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .tertiary,
@@ -453,7 +305,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   useGoogleFonts:
                                                       GoogleFonts.asMap()
                                                           .containsKey(
-                                                              'Work Sans'),
+                                                              'Poppins'),
                                                 ),
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -468,7 +320,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
+                                      0.0, 24.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -545,95 +397,32 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     ],
                                   ),
                                 ),
-                                Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 36.0, 0.0),
-                                          child: Text(
-                                            'Esqueceu sua senha?',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  fontSize: 14.0,
-                                                  useGoogleFonts:
-                                                      GoogleFonts.asMap()
-                                                          .containsKey(
-                                                              'Poppins'),
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: () async {
-                                          context.goNamed(
-                                            'RecSenha',
-                                            extra: <String, dynamic>{
-                                              kTransitionInfoKey:
-                                                  TransitionInfo(
-                                                hasTransition: true,
-                                                transitionType:
-                                                    PageTransitionType.fade,
-                                                duration:
-                                                    Duration(milliseconds: 150),
-                                              ),
-                                            },
-                                          );
-                                        },
-                                        text: 'Recuperar senha',
-                                        options: FFButtonOptions(
-                                          width: 119.0,
-                                          height: 40.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: Color(0x004B39EF),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 14.0,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts:
-                                                    GoogleFonts.asMap()
-                                                        .containsKey('Poppins'),
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 0.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                               ],
                             ),
                           ),
                         ),
-                      ].divide(SizedBox(height: 10.0)),
+                        Align(
+                          alignment: AlignmentDirectional(-1.0, 0.0),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 20.0, 0.0, 0.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed('Login');
+                              },
+                              child: Icon(
+                                Icons.chevron_left,
+                                color: FlutterFlowTheme.of(context).tertiary,
+                                size: 24.0,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

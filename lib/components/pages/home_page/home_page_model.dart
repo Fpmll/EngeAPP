@@ -7,19 +7,13 @@ import 'home_page_widget.dart' show HomePageWidget;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class HomePageModel extends FlutterFlowModel<HomePageWidget> {
-  ///  Local state fields for this page.
-
-  double? varValorGeradoDia;
-
-  double? varValorGeradoMes;
-
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for ValorMwh widget.
   FocusNode? valorMwhFocusNode;
   TextEditingController? valorMwhController;
@@ -48,6 +42,7 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
 
   @override
   void dispose() {
+    unfocusNode.dispose();
     valorMwhFocusNode?.dispose();
     valorMwhController?.dispose();
 
